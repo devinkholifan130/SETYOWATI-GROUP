@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHARKO Online Children T-Shirt Shopping Website</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <!-- Link Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Body Color */
+        :root {
+            --primary: #fded0e; /* Bright Yellow */
+            --secondary: #ff7cc4; /* Soft Pink */
+            --tertiary: #0b4bfd; /* Ocean Blue */
+            --bg: #f730d5; /* Vibrant Pink */
+            --text: #ffffff; /* White */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg);
+            color: white;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%) !important;
+            border-bottom: 3px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            padding: 0.8rem 1rem;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--tertiary) !important;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .navbar-brand .logo-icon {
+            margin-right: 10px;
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        .nav-link {
+            color: var(--tertiary) !important;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+            color: var(--tertiary);
+        }
+        
+        .nav-link:hover {
+            color: var(--tertiary) !important;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--secondary);
+            padding: 0.3rem 0.6rem;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .btn-sharko {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-sharko:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .navbar-brand {
+                font-size: 1.6rem;
+            }
+            
+            .nav-link {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary) 0%, var(--merah) 100%);
+                padding: 1rem;
+                margin-top: 0.5rem;
+                border-radius: 5px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-link {
+                padding: 0.7rem 0 !important;
+                margin: 0.3rem 0;
+            }
+        }
+
+         /* Hero Section */
+         .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('SHARKO Wallpaper.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(1, 1, 3, 0.7), rgba(255, 255, 255, 0));
+        }
+
+        .hero .content {
+            text-align: center;
+            z-index: 2;
+            padding: 1.4rem 7%;
+            max-width: 60rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero .content h1 {
+            font-size: 4em;
+            font-weight: bold;
+            color: var(--secondary);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .hero .content p {
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            line-height: 1.4;
+            font-weight: bold;
+            color: var(--primary);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Buttons */
+        .hero .content a {
+            display: inline-block;
+            margin: 1rem 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            border-radius: 0.5rem;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .content .cta {
+            background-color: var(--primary);
+        }
+
+        .hero .content .cta2 {
+            background-color: var(--secondary);
+        }
+
+        .hero .content .cta3 {
+            background-color: var(--tertiary);
+        }
+
+        .hero .content a:hover {
+            transform: scale(1.05);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .content a i {
+            margin-right: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+         /* Promo Styling */
+         .promo {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .promo-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FF4500; /* Bright Red */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-text {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .text-success {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--tertiary); /* Green */
+        }
+
+        .promo-img {
+            max-width: 250px;
+            border-radius: 10px;
+            animation: floatAnimation 3s infinite ease-in-out;
+        }
+
+        /* Efek animasi mengambang */
+        @keyframes floatAnimation {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Price Styling */
+        .price {
+            padding: 40px 20px;
+            background: var(--primary);
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            box-shadow: 0px 10px 15px rgba(255, 20, 147, 0.2);
+            border: 3px dashed #ff1493;
+            text-align: center;
+        }
+
+        .price h2 {
+            font-size: 28px;
+            color: #ff1493; /* Bright Pink */
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .price-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-list li {
+            font-size: 20px;
+            color: #ff4da6; /* Soft Pink */
+            font-weight: 500;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price-list li i {
+            margin-right: 10px;
+            color: var(--tertiary); /* Green */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .promo, .price {
+            animation: fadeIn 1s ease-in-out;
+        }
+   
+          /* About Styling */
+          .about {
+            padding: 2rem 1rem;
+            background-color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .about h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .about h2 span {
+            color: var(--secondary);
+        }
+
+        /* Flexbox Styling for Row */
+        .about .row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap; /* Agar tetap responsif */
+        }
+
+        /* Image Styling */
+        .about .row .about-img {
+            flex: 1 1 45%;
+        }
+
+        .about .row .about-img img {
+            width: 100%;
+            border-radius: 1rem; /* Sudut lebih membulat */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Efek bayangan lebih halus */
+            transition: transform 0.3s ease;
+        }
+
+        .about .row .about-img img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Content Styling */
+        .about .row .content {
+            flex: 1 1 45%;
+        }
+
+        .about .row .content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .about .row .content p {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* Icon Styling */
+        .about .row .content i {
+            margin-right: 0.5rem;
+            color: var(--secondary);
+        }
+
+   /* Follow Section Styling */
+.follow {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #ff69b4 0%, #ffb3c1 100%); /* Pink SHARKO gradient */
+    position: relative;
+}
+
+.follow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cartographer.png'); /* Polka dots for kids theme */
+    opacity: 0.1;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+.social-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ff69b4; /* Pink SHARKO accent */
+}
+
+.social-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+    border-color: rgba(255, 105, 180, 0.3);
+}
+
+.social-card a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 100%;
+}
+
+.social-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.instagram .social-icon {
+    background: linear-gradient(45deg, #ff69b4, #ffb3c1); /* Pink gradient */
+}
+
+.youtube .social-icon {
+    background: linear-gradient(45deg, #ff45a4, #ff76c2); /* Bright pink gradient */
+}
+
+.whatsapp .social-icon {
+    background: linear-gradient(45deg, #25d366, #128c7e); /* WhatsApp green */
+}
+
+.social-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Comic Neue', cursive; /* Playful font */
+}
+
+.social-card p {
+    color: #bbb;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-family: 'Comic Neue', cursive; /* Playful font */
+}
+
+.follow-btn {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.follow-btn i {
+    margin-right: 8px;
+}
+
+.social-card:hover .follow-btn {
+    background: #ff69b4; /* Pink SHARKO */
+    color: white;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+.section-title {
+font-size: 2.2rem;
+}
+
+.section-subtitle {
+font-size: 1.1rem;
+}
+
+.map-frame {
+height: 400px;
+}
+}
+
+@media (max-width: 768px) {
+.section-title {
+font-size: 2rem;
+}
+
+.social-grid {
+grid-template-columns: 1fr;
+max-width: 400px;
+}
+
+.map-overlay {
+bottom: 10px;
+right: 10px;
+}
+
+.directions-btn {
+padding: 10px 20px;
+font-size: 0.9rem;
+}
+}
+
+ /* Footer Styling */
+ .footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px; /* Responsive column width */
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--tertiary);
+        }
+
+        /* Payment Methods */
+        .payment-methods img,
+        .shipping-methods img,
+        .social-icons img {
+            width: 40px;
+            margin: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .payment-methods img:hover,
+        .shipping-methods img:hover,
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+
+  /* ========== MEDIA QUERIES ========== */
+
+/* PC/Laptop (Default Styles) */
+.navbar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%) !important;
+    border-bottom: 3px solid var(--secondary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    padding: 0.8rem 1rem;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--tertiary) !important;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+}
+
+.hero .content h1 {
+    font-size: 4em;
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .hero .content h1 {
+        font-size: 3em;
+    }
+
+    .hero .content p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Smartphone (Small Devices < 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        margin: 0.3rem 0;
+    }
+
+    .navbar-collapse {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero .content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero .content p {
+        font-size: 1.2rem;
+    }
+
+    .hero .content a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Extra Small Devices (Very Small Smartphones < 576px) */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        margin: 0.2rem 0;
+    }
+
+    .hero .content h1 {
+        font-size: 2em;
+    }
+
+    .hero .content p {
+        font-size: 1rem;
+    }
+
+    .hero .content a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* PC/Laptop (Default Styles) */
+.promo {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.promo-text {
+    font-size: 1.2rem;
+}
+
+.text-success {
+    font-size: 1.5rem;
+}
+
+.promo-img {
+    max-width: 250px;
+}
+
+.price {
+    padding: 40px 20px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.price h2 {
+    font-size: 28px;
+}
+
+.price-list li {
+    font-size: 20px;
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 992px) {
+    .promo {
+        padding: 30px 15px;
+    }
+
+    .promo h2 {
+        font-size: 2rem;
+    }
+
+    .promo-text {
+        font-size: 1rem;
+    }
+
+    .text-success {
+        font-size: 1.3rem;
+    }
+
+    .promo-img {
+        max-width: 200px;
+    }
+
+    .price {
+        padding: 30px 15px;
+        max-width: 600px;
+    }
+
+    .price h2 {
+        font-size: 24px;
+    }
+
+    .price-list li {
+        font-size: 18px;
+    }
+}
+
+/* Smartphone (Small Devices < 768px) */
+@media (max-width: 768px) {
+    .promo {
+        padding: 20px 10px;
+    }
+
+    .promo-banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .promo h2 {
+        font-size: 1.8rem;
+    }
+
+    .promo-text {
+        font-size: 0.9rem;
+    }
+
+    .text-success {
+        font-size: 1.2rem;
+    }
+
+    .promo-img {
+        max-width: 150px;
+    }
+
+    .price {
+        padding: 20px 10px;
+        max-width: 500px;
+    }
+
+    .price h2 {
+        font-size: 20px;
+    }
+
+    .price-list li {
+        font-size: 16px;
+    }
+}
+
+/* Extra Small Devices (Very Small Smartphones < 576px) */
+@media (max-width: 576px) {
+    .promo {
+        padding: 15px 5px;
+    }
+
+    .promo-banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .promo h2 {
+        font-size: 1.6rem;
+    }
+
+    .promo-text {
+        font-size: 0.8rem;
+    }
+
+    .text-success {
+        font-size: 1rem;
+    }
+
+    .promo-img {
+        max-width: 120px;
+    }
+
+    .price {
+        padding: 15px 5px;
+        max-width: 400px;
+    }
+
+    .price h2 {
+        font-size: 18px;
+    }
+
+    .price-list li {
+        font-size: 14px;
+    }
+}
+
+
+/* Media Queries */
+@media (max-width: 992px) {
+            .about h2 {
+                font-size: 2rem;
+            }
+
+            .about .row .about-img,
+            .about .row .content {
+                flex: 1 1 100%; /* Full width pada tablet */
+            }
+
+            .about .row .content h3 {
+                font-size: 1.6rem;
+            }
+
+            .about .row .content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                padding: 1.5rem 1rem;
+            }
+
+            .about h2 {
+                font-size: 1.8rem;
+            }
+
+            .about .row .about-img img {
+                border-radius: 0.8rem;
+            }
+
+            .about .row .content h3 {
+                font-size: 1.4rem;
+            }
+
+            .about .row .content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about {
+                padding: 1rem 0.5rem;
+            }
+
+            .about h2 {
+                font-size: 1.6rem;
+            }
+
+            .about .row .content h3 {
+                font-size: 1.2rem;
+            }
+
+            .about .row .content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Media Queries */
+        
+/* PC/Laptop (Default Styles) */
+.follow {
+padding: 5rem 0;
+}
+
+.social-grid {
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+
+.social-card h3 {
+font-size: 1.5rem;
+}
+
+.social-card p {
+font-size: 0.9rem;
+}
+
+.follow-btn {
+padding: 10px 20px;
+font-size: 0.9rem;
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 992px) {
+.follow {
+  padding: 4rem 0; /* Mengurangi padding vertikal */
+}
+
+.social-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mengurangi lebar kolom */
+  gap: 1.5rem;
+}
+
+.social-card h3 {
+  font-size: 1.3rem;
+}
+
+.social-card p {
+  font-size: 0.8rem;
+}
+
+.follow-btn {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+}
+
+/* Smartphone (Small Devices < 768px) */
+@media (max-width: 768px) {
+.follow {
+  padding: 3rem 0; /* Mengurangi padding vertikal lebih lanjut */
+}
+
+.social-grid {
+  grid-template-columns: 1fr; /* Satu kolom untuk smartphone */
+  max-width: 400px;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.social-card h3 {
+  font-size: 1.2rem;
+}
+
+.social-card p {
+  font-size: 0.7rem;
+}
+
+.follow-btn {
+  padding: 6px 12px;
+  font-size: 0.7rem;
+}
+
+.social-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+}
+}
+
+/* Extra Small Devices (Very Small Smartphones < 576px) */
+@media (max-width: 576px) {
+.follow {
+  padding: 2rem 0; /* Mengurangi padding vertikal lebih lanjut */
+}
+
+.social-grid {
+  max-width: 300px; /* Mengurangi lebar maksimum grid */
+  gap: 0.8rem;
+}
+
+.social-card h3 {
+  font-size: 1rem;
+}
+
+.social-card p {
+  font-size: 0.6rem;
+}
+
+.follow-btn {
+  padding: 5px 10px;
+  font-size: 0.6rem;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+}
+}
+
+         /* Media Queries */
+
+         @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                flex: 1 1 100%; /* Full width on mobile */
+                text-align: center;
+            }
+
+            .footer-section h4 {
+                font-size: 1rem;
+            }
+
+            .footer-section ul li a {
+                font-size: 0.8rem;
+            }
+
+            .payment-methods img,
+            .shipping-methods img,
+            .social-icons img {
+                width: 35px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding: 30px 0;
+            }
+
+            .footer-section h4 {
+                font-size: 0.9rem;
+            }
+
+            .footer-section ul li a {
+                font-size: 0.7rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <!-- Website Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,
+    200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+      <a class="navbar-brand" href="#">
+          <i class="fas fa-tshirt logo-icon"></i>
+          SHARKO
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="#home">
+                      <i class="fas fa-home"></i> Home
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">
+                      <i class="fas fa-info-circle"></i> About
+                  </a>
+              </li>
+              <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                  <a class="btn btn-indonesia" href="#contact">
+                      <i class="fas fa-phone"></i> Contact
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+ <!-- Hero Section -->
+ <section class="hero" id="home">
+  <main class="content mt-5 mb-3">
+      <h1><i class="fas fa-shark"></i> SHARKO</h1>
+      <p>Menyediakan berbagai kaus anak terbaik dengan kualitas dan harga terjangkau</p>
+      <a href="galerisharko.html" class="cta">
+          <i class="fas fa-shopping-cart"></i> Beli Sekarang
+      </a>
+      <a href="index.html" class="cta2">
+          <i class="fas fa-arrow-left"></i> Kembali
+      </a>
+  </main>
+</section>
+
+ <!-- Promo Section -->
+ <section id="promo" class="promo">
+  <div class="promo-banner">
+      <div>
+          <h2><i class="fas fa-shark"></i> SHARKO</h2>
+          <p class="promo-text"><i class="fas fa-gift"></i> Belanja lebih hemat dan nyaman dengan Sharko!</p>
+          <p class="text-success fw-bold"><i class="fas fa-tags"></i> Diskon hingga 50%*</p>
+      </div>
+      <img src="SHARKO Logo.jpg" alt="Produk Sharko" class="promo-img">
+  </div>
+</section>
+
+<!-- Price Section -->
+<section id="price" class="price">
+  <h2><i class="fas fa-dollar-sign"></i> Harga Kaus Anak SHARKO</h2>
+  <ul class="price-list">
+      <li><i class="fas fa-tshirt"></i> 1 PCS: Rp. 50.000,00</li>
+      <li><i class="fas fa-tshirt"></i> 3 PCS: Rp. 150.000,00</li>
+      <li><i class="fas fa-tshirt"></i> 5 PCS: Rp. 250.000,00</li>
+      <li><i class="fas fa-tshirt"></i> 10 PCS: Rp. 500.000,00</li>
+  </ul>
+</section>
+
+ <!-- About Section -->
+ <section id="about" class="about">
+  <h2>Tentang <span>SHARKO</span></h2>
+
+  <div class="row">
+      <div class="about-img">
+          <img src="SHARKO Wallpaper.jpg" alt="Tentang SHARKO">
+      </div>
+      <div class="content">
+          <h3><i class="fas fa-child"></i> Mengapa Anda tertarik dengan SHARKO?</h3>
+          <p><i class="fas fa-tshirt"></i> SHARKO dari SETYOWATI GROUP, menyediakan kaus-kaus lokal khusus anak-anak dengan desain yang ceria.</p>
+          <p><i class="fas fa-shopping-cart"></i> Segeralah membeli kaus-kaus anak dari brand SHARKO sebelum kehabisan!</p>
+      </div>
+  </div>
+</section>
+
+
+<!-- Follow Section -->
+<section id="follow" class="follow">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-heart"></i> Ikuti <span>SHARKO</span>
+      </h2>
+      <p class="section-subtitle">
+        Untuk postingan dan konten terbaru, follow media sosial kami
+      </p>
+  
+      <div class="social-grid">
+        <div class="social-card instagram">
+          <a href="https://www.instagram.com/sharko_id/" target="_blank">
+            <div class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <h3>Instagram</h3>
+            <p>@sharko_id</p>
+            <div class="follow-btn">
+              <i class="fas fa-user-plus"></i> Follow
+            </div>
+          </a>
+        </div>
+        
+        
+        <div class="social-card whatsapp">
+          <a href="https://wa.me/6281213911456" target="_blank">
+            <div class="social-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Hubungi Kami</p>
+            <div class="follow-btn">
+              <i class="fas fa-comment-dots"></i> Chat
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Layanan Pelanggan -->
+        <div class="footer-section">
+          <h4>Layanan Pelanggan</h4>
+          <ul>
+            <li><a href="#">Bantuan</a></li>
+            <li><a href="#">Metode Pembayaran</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Pengembalian & Dana</a></li>
+            <li><a href="#">Garansi SHARKO</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+  
+        <!-- Jelajahi SHARKO -->
+        <div class="footer-section">
+          <h4>Jelajahi SHARKO</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">SHARKO Mall</a></li>
+            <li><a href="#">Flash Sale</a></li>
+          </ul>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 SHARKO. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle Navbar for Mobile
+    const navbarToggler = document.getElementById('navbarToggler');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    navbarToggler.addEventListener('click', () => {
+        navbarNav.classList.toggle('active');
+    });
+
+    // Add Scrolled Class on Scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+  </body>
+</html>

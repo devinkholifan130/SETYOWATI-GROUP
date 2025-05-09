@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SETYOWATI GROUP Price List</title>
+    <link rel="website icon" href="SETYOWATI GROUP Logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5rem;
+            color: #be5906; /* Warna utama SETYOWATI GROUP */
+        }
+        h1 i {
+            margin-right: 10px;
+        }
+
+     /* Table for KAOSKU */
+.table {
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table thead th {
+    background: linear-gradient(to right, black, black);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+.table tbody tr:hover {
+    background-color: #fff8e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(190, 89, 6, 0.2);
+}
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+.product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f0e6d2;
+    transition: all 0.3s ease;
+}
+.product-img:hover {
+    transform: scale(1.1);
+    border-color: #ee8e40;
+}
+.price-info-kaosku {
+    color: #b37c06;
+    font-weight: bold;
+}
+
+/* Stock Styling */
+        .stock-info {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .out-of-stock {
+            color: #dc3545;
+        }
+
+        /* Table for SPIIK */
+.table2 {
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table2 thead th {
+    background: linear-gradient(to right, #be0c06, #ffffff);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.table2 tbody tr:hover {
+    background-color: #fff8e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(190, 89, 6, 0.2);
+}
+.table2 td {
+    text-align: center;
+    vertical-align: middle;
+}
+.product-img2 {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f0e6d2;
+    transition: all 0.3s ease;
+}
+.product-img2:hover {
+    transform: scale(1.1);
+    border-color: #ee8e40;
+}
+.price-info-spiik {
+    color: #be0606;
+    font-weight: bold;
+}
+
+/* Table for SHARKO */
+.table3 {
+    width: 90%;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table3 thead th {
+    background: linear-gradient(to right, #068abe, #ff92d5);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.table3 tbody tr:hover {
+    background-color: #ff84a9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(190, 89, 6, 0.2);
+}
+.table3 td {
+    text-align: center;
+    vertical-align: middle;
+}
+.product-img3 {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f0e6d2;
+    transition: all 0.3s ease;
+}
+.product-img3:hover {
+    transform: scale(1.1);
+    border-color: #408bee;
+}
+.price-info-sharko {
+    color: #d65184;
+    font-weight: bold;
+}
+
+        /* Back Button Styling */
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: linear-gradient(to right, #be5906, #ee8e40);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(190, 89, 6, 0.3);
+        }
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+
+        /* Separator for KAOSKU */
+        .separator {
+            width: 80%;
+            margin: 30px auto;
+            height: 2px;
+            background: linear-gradient(to right, #ffffff, #020202);
+            position: relative;
+        }
+        .separator::before {
+            content: attr(data-title);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f8f9fa;
+            padding: 0 10px;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* Separator for SPIIK */
+.separator2 {
+    width: 80%;
+    margin: 30px auto;
+    height: 2px;
+    background: linear-gradient(to right, #a01e07, #ececec);
+    position: relative;
+}
+.separator2::before {
+    content: attr(data-title);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8f9fa;
+    padding: 0 10px;
+    font-weight: bold;
+    color: #be0606;
+}
+
+/* Separator for SHARKO */
+.separator3 {
+    width: 80%;
+    margin: 30px auto;
+    height: 2px;
+    background: linear-gradient(to right, #ff3668, #40b7ee);
+    position: relative;
+}
+.separator3::before {
+    content: attr(data-title);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8f9fa;
+    padding: 0 10px;
+    font-weight: bold;
+    color: #06b2be;
+}
+
+
+/* Variant Price Styling */
+        .variant-price-info {
+    background: #fff8e1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #5D4037;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.variant-price-info:hover {
+    background: #ffecb3;
+    box-shadow: 0 4px 10px rgba(190, 89, 6, 0.2);
+    transform: translateY(-2px);
+}
+
+.price-tier p {
+    font-weight: bold;
+    margin: 5px 0;
+}
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-store"></i> Daftar Harga SETYOWATI GROUP</h1>
+
+    <!-- KAOSKU Section -->
+    <div class="separator" data-title="KAOSKU"></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Gambar</th>
+                <th>Nama Produk <i class="fas fa-tag"></i></th>
+                <th>Harga <i class="fas fa-money-bill-wave"></i></th>
+                <th>Stok <i class="fas fa-box"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><img src="KAOSKU BLUE SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                <td class="product-name">Kaos Polos KAOSKU Blue <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-kaosku">Rp 36.000,00 -</td>
+                    <td class="stock-info">Tersedia</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="KAOSKU CYAN SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                <td class="product-name">Kaos Polos KAOSKU Cyan <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-kaosku">Rp 36.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="KAOSKU GREY SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                <td class="product-name">Kaos Polos KAOSKU Grey <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-kaosku">Rp 36.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="KAOSKU ORANGE SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                <td class="product-name">Kaos Polos KAOSKU Orange <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-kaosku">Rp 38.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+            <tr>
+                <tr>
+                    <td>5</td>
+                    <td><img src="KAOSKU RED SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                    <td class="product-name">Kaos Polos KAOSKU Red <i class="fas fa-tshirt"></i></td>
+                    <td class="price-info-kaosku">Rp 38.000,00 -</td>
+                    <td class="stock-info">Tersedia</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><img src="KAOSKU PINK SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                    <td class="product-name">Kaos Polos KAOSKU Pink <i class="fas fa-tshirt"></i></td>
+                    <td class="price-info-kaosku">Rp 38.000,00 -</td>
+                    <td class="stock-info">Tersedia</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><img src="KAOSKU GREEN SHIRT.jpg" alt="Kaos Polos KAOSKU" class="product-img"></td>
+                    <td class="product-name">Kaos Polos KAOSKU Green <i class="fas fa-tshirt"></i></td>
+                    <td class="price-info-kaosku">Rp 38.000,00 -</td>
+                    <td class="stock-info">Tersedia</td>
+                </tr>
+                
+                <tr>
+                    <td>7</td>
+                    <td><img src="KAOSKU WHITE PINK JERSEY.jpg" alt="Jersey KAOSKU White Pink" class="product-img"></td>
+                    <td class="product-name">KAOSKU White Pink Jersey <i class="fas fa-futbol"></i></td>
+                    <td class="variant-price-info">
+                        <div class="price-tier">
+                            <p>Rp 165.000,00 - (1-9 PCS)</p>
+                            <p>Rp 135.000,00 - (10-99 PCS)</p>
+                            <p>Rp 125.000,00 - (100+ PCS)</p>
+                        </div>
+                    </td>
+                    <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td><img src="KAOSKU GREEN WITH YELLOW STRIPE JERSEY.jpg" alt="Jersey KAOSKU Green With Yellow Stripe" class="product-img"></td>
+                <td class="product-name">KAOSKU Green With Yellow Stripe Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>9</td>
+                <td><img src="KAOSKU GREEN RED JERSEY.jpg" alt="Jersey KAOSKU Green Red" class="product-img"></td>
+                <td class="product-name">KAOSKU Green Red Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 180.000,00 - (1-9 PCS)</p>
+                        <p>Rp 145.000,00 - (10-99 PCS)</p>
+                        <p>Rp 135.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>10</td>
+                <td><img src="KAOSKU BLACK BLUE JERSEY.jpg" alt="Jersey KAOSKU Black Blue" class="product-img"></td>
+                <td class="product-name">KAOSKU Black Blue Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>11</td>
+                <td><img src="KAOSKU BLACK PINK JERSEY.jpg" alt="Jersey KAOSKU Black Pink" class="product-img"></td>
+                <td class="product-name">KAOSKU Black Pink Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>12</td>
+                <td><img src="KAOSKU Indonesian Jersey Ver.1.jpg" alt="Jersey KAOSKU Indonesian Ver.1" class="product-img"></td>
+                <td class="product-name">KAOSKU Indonesian Ver.1 Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>13</td>
+                <td><img src="KAOSKU Indonesian Jersey Ver.2.jpg" alt="Jersey KAOSKU Indonesian Ver.2" class="product-img"></td>
+                <td class="product-name">KAOSKU Indonesian Ver.2 Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>14</td>
+                <td><img src="KAOSKU Indonesian Jersey Ver.3.jpg" alt="Jersey KAOSKU Indonesian Ver.3" class="product-img"></td>
+                <td class="product-name">KAOSKU Indonesian Ver.3 Jersey <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+          <tr>
+                <td>15</td>
+                <td><img src="SPJ SETYOWATI GROUP Octopus-styled Black White Jersey.jpg" alt="SPJ Octopus-Styled Black White Jersey" class="product-img"></td>
+                <td class="product-name">SPJ Octopus-Styled Black White Jersey  <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+        
+          <tr>
+                <td>16</td>
+                <td><img src="SPJ MAT-PRINT SABLON EXPRESS JERSEY.jpg" alt="SPJ MAT-PRINT Sablon Express Jersey" class="product-img"></td>
+                <td class="product-name">SPJ MAT-PRINT Sablon Express Jersey  <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+
+        
+          <tr>
+                <td>17</td>
+                <td><img src="SPJ BLACK WITH CYAN AND YELLOW STRIPE JERSEY.jpg" alt="SPJ Black With Cyan And Yellow Stripe Jersey" class="product-img"></td>
+                <td class="product-name">SPJ Black With Cyan And Yellow Stripe Jersey  <i class="fas fa-futbol"></i></td>
+                <td class="variant-price-info">
+                    <div class="price-tier">
+                        <p>Rp 165.000,00 - (1-9 PCS)</p>
+                        <p>Rp 135.000,00 - (10-99 PCS)</p>
+                        <p>Rp 125.000,00 - (100+ PCS)</p>
+                    </div>
+                </td>
+                <td class="stock-info">Tersedia</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- SPIIK Section -->
+    <div class="separator2" data-title="SPIIK"></div>
+    <table class="table2 table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Gambar</th>
+                <th>Nama Produk <i class="fas fa-tag"></i></th>
+                <th>Harga <i class="fas fa-money-bill-wave"></i></th>
+                <th>Stok <i class="fas fa-box"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><img src="SPIIK KITSUNE 1.jpg" alt="Kaus SPIIK KITSUNE" class="product-img2"></td>
+                <td class="product-name">SPIIK KITSUNE <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 36.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+             <tr>
+                <td>2</td>
+                <td><img src="SPIIK LONG BOARD 1.jpg" alt="Kaus SPIIK LONG BOARD" class="product-img2"></td>
+                <td class="product-name">SPIIK LONG BOARD <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-sharko">Rp 38.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+             <tr>
+                <td>3</td>
+                <td><img src="SPIIK ALIEN INVASION.jpg" alt="Kaus SPIIK ALIEN INVASION" class="product-img2"></td>
+                <td class="product-name">SPIIK ALIEN INVASION <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 40.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+ <tr>
+                <td>4</td>
+                <td><img src="SPIIK DARUMA.jpg" alt="Kaus SPIIK DARUMA" class="product-img2"></td>
+                <td class="product-name">SPIIK DARUMA <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 40.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+ <tr>
+                <td>5</td>
+                <td><img src="SPIIK FEELING GROOVY.jpg" alt="Kaus SPIIK FEELING GROOVY" class="product-img2"></td>
+                <td class="product-name">SPIIK FEELING GROOVY <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 45.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+ <tr>
+                <td>6</td>
+                <td><img src="SPIIK SKATE FOR LIFE.jpg" alt="Kaus SPIIK SKATE FOR LIFE" class="product-img2"></td>
+                <td class="product-name">SPIIK SKATE FOR LIFE <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+ <tr>
+                <td>7</td>
+                <td><img src="SPIIK TOME.jpg" alt="Kaus SPIIK TOME" class="product-img2"></td>
+                <td class="product-name">SPIIK TOME <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 40.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+
+ <tr>
+                <td>7</td>
+                <td><img src="SPIIK PLANTASIA.jpg" alt="Kaus SPIIK PLANTASIA" class="product-img2"></td>
+                <td class="product-name">SPIIK PLANTASIA <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 38.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            
+ <tr>
+                <td>8</td>
+                <td><img src="SPIIK ONI MASK.jpg" alt="Kaus SPIIK ONI MASK" class="product-img2"></td>
+                <td class="product-name">SPIIK ONI MASK <i class="fas fa-tshirt"></i></td>
+                <td class="price-info-spiik">Rp 55.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><img src="SPIIK DRAGON 1.jpg" alt="Jaket SPIIK DRAGON" class="product-img2"></td>
+                <td class="product-name">SPIIK DRAGON <i class="fas fa-snowflake"></i></td>
+                <td class="price-info-spiik">Rp 30.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><img src="SPIIK KICK START 1.jpg" alt="Jaket SPIIK KICK START" class="product-img2"></td>
+                <td class="product-name">SPIIK KICK START <i class="fas fa-snowflake"></i></td>
+                <td class="price-info-spiik">Rp 30.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td><img src="SPIIK LONE WOLF 1.jpg" alt="Jaket SPIIK LONE WOLF" class="product-img2"></td>
+                <td class="product-name">SPIIK LONE WOLF <i class="fas fa-snowflake"></i></td>
+                <td class="price-info-spiik">Rp 35.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td><img src="SPIIK MONSTER 1.jpg" alt="Jaket SPIIK MONSTER" class="product-img2"></td>
+                <td class="product-name">SPIIK MONSTER <i class="fas fa-snowflake"></i></td>
+                <td class="price-info-spiik">Rp 30.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td><img src="SPIIK SAMURAI HOODIE.jpg" alt="Hoodie SPIIK SAMURAI" class="product-img2"></td>
+                <td class="product-name">SPIIK SAMURAI <i class="fas fa-hat-cowboy"></i></td>
+                <td class="price-info-spiik">Rp 40.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>14</td>
+                <td><img src="SPIIK EVIL MASK HOODIE.jpg" alt="Hoodie SPIIK EVIL MASK" class="product-img2"></td>
+                <td class="product-name">SPIIK EVIL MASK <i class="fas fa-hat-cowboy"></i></td>
+                <td class="price-info-spiik">Rp 40.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- SHARKO Section -->
+    <div class="separator3" data-title="SHARKO"></div>
+    <table class="table3 table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Gambar</th>
+                <th>Nama Produk <i class="fas fa-tag"></i></th>
+                <th>Harga <i class="fas fa-money-bill-wave"></i></th>
+                <th>Stok <i class="fas fa-box"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><img src="Sharko Logo Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - Dusty Blue <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><img src="Sharko Logo Shirt Black.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - Black <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><img src="Sharko Logo Shirt Red.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - Red <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td><img src="Sharko Logo Shirt White.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - White <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td><img src="Sharko Logo Shirt Almond Brown.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td><img src="Sharko Logo Pink.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">SHARKO Logo - Pink <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td><img src="Let's Play In Space Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Let's Play In Space - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td><img src="Ice Cream Party Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Ice Cream Party - Dusty Pink <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td><img src="Ice Cream Party Shirt Red.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Ice Cream Party - Red <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td><img src="Sharko Plain Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Sharko Plain - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td><img src="Sharko Plain Shirt Blue.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Sharko Plain - Dusty Blue <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td><img src="Sharko Plain Shirt Pink.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Sharko Plain - Dusty Pink <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td><img src="Bearspace Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Bearspace - Dusty Blue <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>14</td>
+                <td><img src="Bearspace Shirt Brown.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Bearspace - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>15</td>
+                <td><img src="Bearspace Shirt Black.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Bearspace - Black <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>16</td>
+                <td><img src="Flying Frost Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Flying Frost - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>17</td>
+                <td><img src="Future Machine Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Future Machine - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>18</td>
+                <td><img src="Future Machine Shirt White.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Future Machine - White <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>19</td>
+                <td><img src="Wild Wolf Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Wild Wolf - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>20</td>
+                <td><img src="Wild Wolf Shirt Blue.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Wild Wolf - Dusty Blue <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>21</td>
+                <td><img src="Dino Land Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Dino Land - Almond Brown <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>22</td>
+                <td><img src="Cat In Bag Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Cat In Bag - Dusty Blue <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>23</td>
+                <td><img src="Cat In Bag White.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Cat In Bag - White <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>24</td>
+                <td><img src="Scooter Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Scooter - Red <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>25</td>
+                <td><img src="Dynamite KABOOM Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Dynamite KABOOM - Red <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>26</td>
+                <td><img src="Born To Be Queen Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Born To Be Queen - White <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>27</td>
+                <td><img src="Tyrannosaurus Rex Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Tyrannosaurus Rex - Black <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>28</td>
+                <td><img src="Good Day Surfing Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Good Day Surfing - White <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+
+            <tr>
+                <td>29</td>
+                <td><img src="Classic Riders Shirt.jpg" alt="Kaus Anak SHARKO" class="product-img2"></td>
+                <td class="product-name">Classic Riders - Red <i class="fas fa-child"></i></td>
+                <td class="price-info-sharko">Rp 50.000,00 -</td>
+                <td class="stock-info">Tersedia</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Beranda</a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

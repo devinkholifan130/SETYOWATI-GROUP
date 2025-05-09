@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Penjualan - SETYOWATI GROUP</title>
+    <link rel="website icon" href="SETYOWATI GROUP Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<style>
+    /* General Body Styling */
+body {
+    background-color: #f8f1e7; /* Light coffee cream background */
+    color: #4e342e; /* Dark coffee brown text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(94, 64, 55, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2.text-center {
+    color: #be5906; /* Primary color for headers */
+    font-weight: bold;
+    position: relative;
+}
+
+h2.text-center::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #be5906, #ee8e40);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+h5.text-center {
+    color: #be5906; /* Primary color for headers */
+    font-weight: bold;
+    position: relative;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #5D4037;
+}
+
+.form-control {
+    background-color: #fff8e1; /* Light coffee background */
+    border: 2px solid #f0e6d2;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #ee8e40; /* Coffee accent color */
+    box-shadow: 0 0 8px rgba(238, 142, 64, 0.3);
+    outline: none;
+}
+
+select.form-control {
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23be5906'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+/* General Button Styling */
+.btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Success Button (Tambah) */
+.btn-success {
+    background: linear-gradient(to right, #be5906, #ee8e40);
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(190, 89, 6, 0.3);
+}
+
+/* Secondary Button (Back) */
+.btn-secondary {
+    background: linear-gradient(to right, #5D4037, #8D6E63);
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(93, 64, 55, 0.3);
+}
+
+/* Flexbox for Buttons */
+.d-flex {
+    display: flex;
+    justify-content: space-between; /* Mengatur jarak antara tombol */
+}
+
+.gap-3 {
+    gap: 1rem; /* Jarak antar tombol */
+}
+
+.mb-3 {
+    position: relative;
+}
+
+.mb-3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f0e6d2;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2.text-center {
+        font-size: 1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Tambah Data Penjualan</h2>
+        <h5 class="text-center mb-4">Khusus pihak SETYOWATI GROUP yang boleh mengisi form data penjualan ini!</h5>
+        <form id="salesForm">
+            <div class="mb-3">
+                <label class="form-label">Total Kaos Polos Terjual</label>
+                <input type="number" id="totalKausPolos" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Jersey Terjual</label>
+                <input type="number" id="totalJersey" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Kaus Terjual</label>
+                <input type="number" id="totalKaus" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Jaket Terjual</label>
+                <input type="number" id="totalJaket" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Hoodie Terjual</label>
+                <input type="number" id="totalHoodie" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Total Kaus Anak Terjual</label>
+                <input type="number" id="totalKausAnak" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jumlah Uang Dihasilkan (Rp)</label>
+                <input type="number" id="totalUang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Periode</label>
+                <select id="periode" class="form-control">
+                    <option value="Harian">Harian</option>
+                    <option value="Bulanan">Bulanan</option>
+                    <option value="Tahunan">Tahunan</option>
+                </select>
+            </div>
+    
+            <div class="mb-3">
+                <label class="form-label">Pilih Tanggal</label>
+                <input type="date" class="form-control" id="tanggal" required>
+            </div>
+    
+            <!-- Tombol Tambah dan Back -->
+            <div class="d-flex gap-3">
+                <button type="submit" class="btn btn-success w-100">+ Tambah</button>
+                <a href="setyowatidashboard.html" class="btn btn-secondary w-100">Kembali</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("salesForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let totalKausPolos = document.getElementById("totalKausPolos").value;
+            let totalJersey = document.getElementById("totalJersey").value;
+            let totalKaus = document.getElementById("totalKaus").value;
+            let totalJaket = document.getElementById("totalJaket").value;
+            let totalHoodie = document.getElementById("totalHoodie").value;
+            let totalKausAnak = document.getElementById("totalKausAnak").value;
+            let totalUang = document.getElementById("totalUang").value;
+            let periode = document.getElementById("periode").value;
+            let tanggal = document.getElementById("tanggal").value;
+
+            let salesData = {
+                totalKausPolos: totalKausPolos,
+                totalJersey: totalJersey,
+                totalKaus: totalKaus,
+                totalJaket: totalJaket,
+                totalHoodie: totalHoodie,
+                totalKausAnak: totalKausAnak,
+                totalUang: totalUang,
+                periode: periode,
+                tanggal: tanggal
+            };
+
+            localStorage.setItem("salesData", JSON.stringify(salesData));
+
+            window.location.href = "setyowatidashboard.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kaus & Jaket SPIIK</title>
+    <link rel="website icon" href="SPIIK Logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+       /* Modern Indonesian Style for T-Shirt Gallery */
+:root {
+  --indonesian-dark: #811313;
+  --indonesian-medium: #7e0505;
+  --indonesian-light: #f70c0c;
+  --indonesian-cream: #FFF8E1;
+  --indonesian-milk: #F8F9FA;
+  --indonesian-accent: #a83d3d;
+}
+
+body {
+  background-color: var(--indonesian-milk);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--coffee-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--coffee-medium);
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--indonesian-accent);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(94, 64, 55, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  padding-bottom: 15px;
+  border: 1px solid var(--indonesian-light);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(94, 64, 55, 0.15);
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--indonesian-medium);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  border-bottom: 1px solid var(--indonesian-light);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-item h5 {
+  padding: 15px 10px 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--indonesian-dark);
+  margin: 0;
+}
+
+.gallery-item .category {
+  font-size: 0.85rem;
+  color: var(--indonesian-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 1.25rem;
+  color: var(--indonesian-medium);
+  font-weight: 700;
+  margin: 10px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price .original {
+  font-size: 0.9rem;
+  color: var(--indonesian-medium);
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 12px;
+  background: linear-gradient(to right, var(--indonesian-medium), var(--indonesian-accent));
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(126, 78, 5, 0.2);
+}
+
+.buy-btn:hover {
+  background: linear-gradient(to right, var(--indonesian-dark), var(--indonesian-medium));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(126, 78, 5, 0.3);
+}
+
+.buy-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.buy-btn:hover i {
+  transform: translateX(3px);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--indonesian-accent);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  margin: 40px auto 0;
+  padding: 15px 25px;
+  background: var(--indonesian-dark);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(93, 64, 55, 0.2);
+}
+
+.back-btn:hover {
+  background: var(--indonesian-medium);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(93, 64, 55, 0.3);
+}
+
+.back-btn i {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover i {
+  transform: translateX(-3px);
+}
+
+.separator {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--indonesian-light), transparent);
+  margin: 40px auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .back-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+    </style>
+</head>
+<body>
+    <center>
+    <div class="container">
+        <h2 class="text-center my-4">Galeri Kaus SPIIK</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="SPIIK KITSUNE 1.jpg" alt="Kaus SPIIK 1">
+                <h5>SPIIK KITSUNE</h5>
+                <p class="price">Rp 36.000,00,-</p>
+                <a href="#" 
+                   class="buy-btn addToCart"
+                   data-name="SPIIK KITSUNE"
+                   data-price="36000"
+                   data-image="SPIIK KITSUNE 1.jpg">
+                   Beli Sekarang <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="SPIIK LONG BOARD 1.jpg" alt="Kaus SPIIK 2">
+                <h5>SPIIK LONG BOARD</h5>
+                <p class="price">Rp 38.000,00,-</p>
+                <a href="#" 
+                   class="buy-btn addToCart"
+                   data-name="SPIIK LONG BOARD"
+                   data-price="38000"
+                   data-image="SPIIK LONG BOARD 1.jpg">
+                   Beli Sekarang <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+              <img src="SPIIK ALIEN INVASION.jpg" alt="Kaus SPIIK 3">
+              <h5>SPIIK ALIEN INVASION</h5>
+              <p class="price">Rp 40.000,00,-</p>
+              <a href="#" 
+                 class="buy-btn addToCart"
+                 data-name="SPIIK ALIEN INVASION"
+                 data-price="40000"
+                 data-image="SPIIK ALIEN INVASION.jpg">
+                 Beli Sekarang <i class="fas fa-shopping-cart"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+            <img src="SPIIK DARUMA.jpg" alt="Kaus SPIIK 4">
+            <h5>SPIIK DARUMA</h5>
+            <p class="price">Rp 40.000,00,-</p>
+            <a href="#" 
+               class="buy-btn addToCart"
+               data-name="SPIIK DARUMA"
+               data-price="40000"
+               data-image="SPIIK LONG DARUMA.jpg">
+               Beli Sekarang <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
+        <div class="gallery-item">
+          <img src="SPIIK FEELING GROOVY.jpg" alt="Kaus SPIIK 5">
+          <h5>SPIIK FEELING GROOVY</h5>
+          <p class="price">Rp 45.000,00,-</p>
+          <a href="#" 
+             class="buy-btn addToCart"
+             data-name="SPIIK GROOVY"
+             data-price="45000"
+             data-image="SPIIK FEELING GROOVY.jpg">
+             Beli Sekarang <i class="fas fa-shopping-cart"></i>
+          </a>
+      </div>
+      <div class="gallery-item">
+        <img src="SPIIK SKATE FOR LIFE.jpg" alt="Kaus SPIIK 6">
+        <h5>SPIIK SKATE FOR LIFE</h5>
+        <p class="price">Rp 50.000,00,-</p>
+        <a href="#" 
+           class="buy-btn addToCart"
+           data-name="SPIIK SKATE FOR LIFE"
+           data-price="50000"
+           data-image="SPIIK SKATE FOR LIFE.jpg">
+           Beli Sekarang <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+    <div class="gallery-item">
+      <img src="SPIIK TOME.jpg" alt="Kaus SPIIK 7">
+      <h5>SPIIK TOME</h5>
+      <p class="price">Rp 40.000,00,-</p>
+      <a href="#" 
+         class="buy-btn addToCart"
+         data-name="SPIIK TOME"
+         data-price="40000"
+         data-image="SPIIK TOME.jpg">
+         Beli Sekarang <i class="fas fa-shopping-cart"></i>
+      </a>
+  </div>
+  <div class="gallery-item">
+    <img src="SPIIK PLANTASIA.jpg" alt="Kaus SPIIK 8">
+    <h5>SPIIK PLANTASIA</h5>
+    <p class="price">Rp 38.000,00,-</p>
+    <a href="#" 
+       class="buy-btn addToCart"
+       data-name="SPIIK PLANTASIA"
+       data-price="38000"
+       data-image="SPIIK PLANTASIA.jpg">
+       Beli Sekarang <i class="fas fa-shopping-cart"></i>
+    </a>
+</div>
+<div class="gallery-item">
+  <img src="SPIIK ONI MASK.jpg" alt="Kaus SPIIK 9">
+  <h5>SPIIK ONI MASK</h5>
+  <p class="price">Rp 55.000,00,-</p>
+  <a href="#" 
+     class="buy-btn addToCart"
+     data-name="SPIIK LONG BOARD"
+     data-price="55000"
+     data-image="SPIIK ONI MASK.jpg">
+     Beli Sekarang <i class="fas fa-shopping-cart"></i>
+  </a>
+</div>
+        </div>
+<div class="separator"></div>
+
+
+<div class="container">
+    <h2 class="text-center my-4">Galeri Jaket & Hoodie SPIIK</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="SPIIK DRAGON 1.jpg" alt="Jaket SPIIK 1">
+            <h5>SPIIK DRAGON</h5>
+            <p class="price">Rp 30.000,00,-</p>
+                <a href="#" 
+                   class="buy-btn addToCart"
+                   data-name="SPIIK DRAGON"
+                   data-price="30000"
+                   data-image="SPIIK DRAGON 1.jpg">
+                   Beli Sekarang <i class="fas fa-shopping-cart"></i>
+                </a>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="SPIIK KICK START 1.jpg" alt="Jaket SPIIK 2">
+            <h5>SPIIK KICK START</h5>
+            <p class="price">Rp 30.000,00,-</p>
+                <a href="#" 
+                   class="buy-btn addToCart"
+                   data-name="SPIIK KICK START"
+                   data-price="30000"
+                   data-image="SPIIK KICK START 1.jpg">
+                   Beli Sekarang <i class="fas fa-shopping-cart"></i>
+                </a>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="SPIIK LONE WOLF 1.jpg" alt="Jaket SPIIK 3">
+            <h5>SPIIK LONE WOLF</h5>
+            <p class="price">Rp 35.000,00,-</p>
+            <a href="#" 
+               class="buy-btn addToCart"
+               data-name="SPIIK LONE WOLF"
+               data-price="35000"
+               data-image="SPIIK LONE WOLF 1.jpg">
+               Beli Sekarang <i class="fas fa-shopping-cart"></i>
+            </a>
+        
+    </div>
+
+    <div class="gallery-item">
+        <img src="SPIIK MONSTER 1.jpg" alt="Jaket SPIIK 4">
+        <h5>SPIIK MONSTER</h5>
+        <p class="price">Rp 35.000,00,-</p>
+        <a href="#" 
+           class="buy-btn addToCart"
+           data-name="SPIIK MONSTER"
+           data-price="35000"
+           data-image="SPIIK MONSTER 1.jpg">
+           Beli Sekarang <i class="fas fa-shopping-cart"></i>
+        </a>
+</div>
+<div class="gallery-item">
+  <img src="SPIIK SAMURAI HOODIE.jpg" alt="Jaket SPIIK 5">
+  <h5>SPIIK SAMURAI HOODIE</h5>
+  <p class="price">Rp 40.000,00,-</p>
+  <a href="#" 
+     class="buy-btn addToCart"
+     data-name="SPIIK SAMURAI HOODIE"
+     data-price="35000"
+     data-image="SPIIK SAMURAI HOODIE.jpg">
+     Beli Sekarang <i class="fas fa-shopping-cart"></i>
+  </a>
+</div>
+<div class="gallery-item">
+  <img src="SPIIK EVIL MASK HOODIE.jpg" alt="Jaket SPIIK 6">
+  <h5>SPIIK EVIL MASK HOODIE</h5>
+  <p class="price">Rp 40.000,00,-</p>
+  <a href="#" 
+     class="buy-btn addToCart"
+     data-name="SPIIK EVIL MASK HOODIE"
+     data-price="35000"
+     data-image="SPIIK EVIL MASK HOODIE.jpg">
+     Beli Sekarang <i class="fas fa-shopping-cart"></i>
+  </a>
+</div>
+    </div>
+</div>
+
+
+        <a href="spiik.html" class="back-btn">Kembali ke SPIIK</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll(".addToCart");
+    
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+    
+                    const name = this.getAttribute("data-name");
+                    const price = this.getAttribute("data-price");
+                    const image = this.getAttribute("data-image");
+    
+                    console.log("Produk Ditambahkan ke Keranjang:");
+                    console.log("Nama:", name);
+                    console.log("Harga:", price);
+                    console.log("Gambar:", image);
+    
+                    alert(`${name} telah ditambahkan ke keranjang!`);
+                });
+            });
+        });
+    </script>
+
+
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cartButtons = document.querySelectorAll(".addToCart");
+
+        cartButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault(); // Mencegah navigasi default
+                
+                const name = this.getAttribute("data-name");
+                const price = parseInt(this.getAttribute("data-price"));
+                const image = this.getAttribute("data-image");
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                
+                // Periksa apakah produk sudah ada di keranjang
+                let existingProduct = cart.find(item => item.name === name);
+
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+
+                // Simpan kembali ke localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert(name + " telah ditambahkan ke keranjang!");
+
+                // Redirect ke halaman keranjang
+                window.location.href = "keranjangspiik.html";
+            });
+        });
+    });
+</script>
+</center>
+</body>
+</html>

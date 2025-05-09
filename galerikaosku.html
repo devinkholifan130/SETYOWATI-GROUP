@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kaus & Jersey KAOSKU</title>
+    <link rel="website icon" href="KAOSKU Logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <style>
+   /* Modern Coffee Style for T-Shirt Gallery */
+:root {
+  --coffee-dark: #5D4037;
+  --coffee-medium: #7E4E05;
+  --coffee-light: #D7CCC8;
+  --coffee-cream: #FFF8E1;
+  --coffee-milk: #F8F9FA;
+  --coffee-accent: #A86A3D;
+}
+
+body {
+  background-color: var(--coffee-milk);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--coffee-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--coffee-medium);
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--coffee-accent);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(94, 64, 55, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  padding-bottom: 15px;
+  border: 1px solid var(--coffee-light);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(94, 64, 55, 0.15);
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--coffee-medium);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+  border-bottom: 1px solid var(--coffee-light);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-item h5 {
+  padding: 15px 10px 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--coffee-dark);
+  margin: 0;
+}
+
+.gallery-item .category {
+  font-size: 0.85rem;
+  color: var(--coffee-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 1.25rem;
+  color: var(--coffee-medium);
+  font-weight: 700;
+  margin: 10px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price .original {
+  font-size: 0.9rem;
+  color: var(--coffee-light);
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 12px;
+  background: linear-gradient(to right, var(--coffee-medium), var(--coffee-accent));
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(126, 78, 5, 0.2);
+}
+
+.buy-btn:hover {
+  background: linear-gradient(to right, var(--coffee-dark), var(--coffee-medium));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(126, 78, 5, 0.3);
+}
+
+.buy-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.buy-btn:hover i {
+  transform: translateX(3px);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--coffee-accent);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  margin: 40px auto 0;
+  padding: 15px 25px;
+  background: var(--coffee-dark);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(93, 64, 55, 0.2);
+}
+
+.back-btn:hover {
+  background: var(--coffee-medium);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(93, 64, 55, 0.3);
+}
+
+.back-btn i {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover i {
+  transform: translateX(-3px);
+}
+
+.separator {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--coffee-light), transparent);
+  margin: 40px auto;
+}
+
+/* General Select Styling */
+.price-selector {
+    width: 100%; /* Full width for better responsiveness */
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4e342e; /* Dark coffee brown text */
+    background-color: #fff8e1; /* Light coffee cream background */
+    border: 2px solid #f0e6d2; /* Coffee border */
+    border-radius: 8px;
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23be5906'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: all 0.3s ease;
+}
+
+.price-selector:focus {
+    border-color: #ee8e40; /* Focus border color */
+    box-shadow: 0 0 8px rgba(238, 142, 64, 0.3);
+    outline: none;
+}
+
+.price-selector option {
+    background-color: #fff8e1; /* Background for options */
+    color: #4e342e; /* Text color for options */
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Hover and Active States */
+.price-selector:hover {
+    border-color: #be5906; /* Darker coffee border on hover */
+}
+
+.price-selector:active {
+    transform: scale(0.98); /* Slight shrink effect when clicked */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .price-selector {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 8px 12px; /* Reduced padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .price-selector {
+        font-size: 0.8rem; /* Even smaller font size for very small screens */
+        padding: 6px 10px; /* Further reduced padding */
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .back-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+    </style>
+</head>
+<body>
+<center>
+    <div class="container">
+        <h2><i class="fas fa-tshirt"></i> Galeri Kaus Polos KAOSKU</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="KAOSKU BLUE SHIRT.jpg" alt="Kaus KAOSKU Biru">
+                <h5>Kaus Polos KAOSKU Biru <i class="fas fa-circle" style="color: blue;"></i></h5>
+                <p class="price">Rp 36.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Biru"
+                   data-price="36000"
+                   data-image="KAOSKU BLUE SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU CYAN SHIRT.jpg" alt="Kaus KAOSKU Cyan">
+                <h5>Kaus Polos KAOSKU Biru Muda <i class="fas fa-circle" style="color: lightblue;"></i></h5>
+                <p class="price">Rp 36.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Biru Muda"
+                   data-price="36000"
+                   data-image="KAOSKU CYAN SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU GREY SHIRT.jpg" alt="Kaus KAOSKU Abu-abu">
+                <h5>Kaus Polos KAOSKU Abu-abu <i class="fas fa-circle" style="color: grey;"></i></h5>
+                <p class="price">Rp 36.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Abu-abu"
+                   data-price="36000"
+                   data-image="KAOSKU GREY SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU ORANGE SHIRT.jpg" alt="Kaus KAOSKU Orange">
+                <h5>Kaus Polos KAOSKU Jingga <i class="fas fa-circle" style="color: orange;"></i></h5>
+                <p class="price">Rp 38.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Jingga"
+                   data-price="38000"
+                   data-image="KAOSKU ORANGE SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU RED SHIRT.jpg" alt="Kaus KAOSKU Merah">
+                <h5>Kaus Polos KAOSKU Merah <i class="fas fa-circle" style="color: red;"></i></h5>
+                <p class="price">Rp 38.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Merah"
+                   data-price="38000"
+                   data-image="KAOSKU RED SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU PINK SHIRT.jpg" alt="Kaus KAOSKU Pink">
+                <h5>Kaus Polos KAOSKU Pink <i class="fas fa-circle" style="color: pink;"></i></h5>
+                <p class="price">Rp 38.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+                   data-name="Kaus Polos KAOSKU Pink"
+                   data-price="38000"
+                   data-image="KAOSKU PINK SHIRT.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+              <img src="KAOSKU GREEN SHIRT.jpg" alt="Kaus KAOSKU Green">
+              <h5>Kaus Polos KAOSKU Green <i class="fas fa-circle" style="color: green;"></i></h5>
+              <p class="price">Rp 38.000,00,-</p>
+              <a href="#" class="buy-btn addToCart" 
+                 data-name="Kaus Polos KAOSKU Green"
+                 data-price="38000"
+                 data-image="KAOSKU GREEN SHIRT.jpg">
+                 Beli Sekarang <i class="fas fa-cart-plus"></i>
+              </a>
+          </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <h2><i class="fas fa-futbol"></i> Galeri Jersey KAOSKU & Jersey SPJ/ESPEJE</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="KAOSKU WHITE PINK JERSEY.jpg" alt="Jersey KAOSKU White Pink">
+                <h5>Jersey KAOSKU White Pink <i class="fas fa-futbol"></i></h5>
+                <select class="price-selector">
+                  <option value="165000">Rp 165.000 (1-9 PCS)</option>
+                  <option value="135000">Rp 135.000 (10-99 PCS)</option>
+                  <option value="125000">Rp 125.000 (100+ PCS)</option>
+              </select>
+              <p class="price selected-price">Rp 165.000,00,-</p>
+                  <a href="#" class="buy-btn addToCart" 
+                   data-name="Jersey KAOSKU White Pink"
+                   data-price="165000"
+                   data-image="KAOSKU WHITE PINK JERSEY.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU GREEN WITH YELLOW STRIPE JERSEY.jpg" alt="Jersey KAOSKU Green Yellow">
+                <h5>Jersey KAOSKU Green With Yellow Stripe <i class="fas fa-futbol"></i></h5>
+                <select class="price-selector">
+                  <option value="165000">Rp 165.000 (1-9 PCS)</option>
+                  <option value="135000">Rp 135.000 (10-99 PCS)</option>
+                  <option value="125000">Rp 125.000 (100+ PCS)</option>
+              </select>
+              <p class="price selected-price">Rp 165.000,00,-</p>
+                              <a href="#" class="buy-btn addToCart" 
+                   data-name="Jersey KAOSKU Green With Yellow Stripe"
+                   data-price="165000"
+                   data-image="KAOSKU GREEN WITH YELLOW STRIPE JERSEY.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <img src="KAOSKU GREEN RED JERSEY.jpg" alt="Jersey KAOSKU Red Long">
+                <h5>Jersey KAOSKU Green Red <i class="fas fa-futbol"></i></h5>
+                <select class="price-selector">
+                  <option value="18-000">Rp 180.000 (1-9 PCS)</option>
+                  <option value="145000">Rp 145.000 (10-99 PCS)</option>
+                  <option value="135000">Rp 135.000 (100+ PCS)</option>
+              </select>
+              <p class="price selected-price">Rp 180.000,00,-</p>
+                              <a href="#" class="buy-btn addToCart" 
+                   data-name="Jersey KAOSKU Green Red"
+                   data-price="180000"
+                   data-image="KAOSKU GREEN RED JERSEY.jpg">
+                   Beli Sekarang <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="gallery-item">
+              <img src="KAOSKU BLACK BLUE JERSEY.jpg" alt="Jersey KAOSKU Black Blue">
+              <h5>Jersey KAOSKU Black Blue <i class="fas fa-futbol"></i></h5>
+              <select class="price-selector">
+                <option value="165000">Rp 165.000 (1-9 PCS)</option>
+                <option value="135000">Rp 135.000 (10-99 PCS)</option>
+                <option value="125000">Rp 125.000 (100+ PCS)</option>
+            </select>
+            <p class="price selected-price">Rp 165.000,00,-</p>
+                            <a href="#" class="buy-btn addToCart" 
+                 data-name="Jersey KAOSKU Black Blue"
+                 data-price="165000"
+                 data-image="KAOSKU BLACK BLUE JERSEY.jpg">
+                 Beli Sekarang <i class="fas fa-cart-plus"></i>
+              </a>
+          </div>
+          <div class="gallery-item">
+            <img src="KAOSKU BLACK PINK JERSEY.jpg" alt="Jersey KAOSKU Black Pink">
+            <h5>Jersey KAOSKU Black Pink <i class="fas fa-futbol"></i></h5>
+            <select class="price-selector">
+              <option value="165000">Rp 165.000 (1-9 PCS)</option>
+              <option value="135000">Rp 135.000 (10-99 PCS)</option>
+              <option value="125000">Rp 125.000 (100+ PCS)</option>
+          </select>
+          <p class="price selected-price">Rp 165.000,00,-</p>
+                          <a href="#" class="buy-btn addToCart" 
+               data-name="Jersey KAOSKU Black Pink"
+               data-price="165000"
+               data-image="KAOSKU BLACK PINK JERSEY.jpg">
+               Beli Sekarang <i class="fas fa-cart-plus"></i>
+            </a>
+        </div>
+        <div class="gallery-item">
+          <img src="KAOSKU Indonesian Jersey Ver.1.jpg" alt="Jersey KAOSKU Indonesian Ver.1">
+          <h5>Jersey KAOSKU Indonesian Ver.1 <i class="fas fa-futbol"></i></h5>
+          <select class="price-selector">
+            <option value="165000">Rp 165.000 (1-9 PCS)</option>
+            <option value="135000">Rp 135.000 (10-99 PCS)</option>
+            <option value="125000">Rp 125.000 (100+ PCS)</option>
+        </select>
+        <p class="price selected-price">Rp 165.000,00,-</p>
+                        <a href="#" class="buy-btn addToCart" 
+             data-name="Jersey KAOSKU Indonesian Ver.1"
+             data-price="165000"
+             data-image="KAOSKU Indonesian Jersey Ver.1.jpg">
+             Beli Sekarang <i class="fas fa-cart-plus"></i>
+          </a>
+      </div>
+      <div class="gallery-item">
+        <img src="KAOSKU Indonesian Jersey Ver.2.jpg" alt="Jersey KAOSKU Indonesian Ver.2">
+        <h5>Jersey KAOSKU Indonesian Ver.2 <i class="fas fa-futbol"></i></h5>
+        <select class="price-selector">
+          <option value="165000">Rp 165.000 (1-9 PCS)</option>
+          <option value="135000">Rp 135.000 (10-99 PCS)</option>
+          <option value="125000">Rp 125.000 (100+ PCS)</option>
+      </select>
+      <p class="price selected-price">Rp 165.000,00,-</p>
+                      <a href="#" class="buy-btn addToCart" 
+           data-name="Jersey KAOSKU Indonesian Jersey Ver.2"
+           data-price="165000"
+           data-image="KAOSKU Indonesian Jersey Ver.2.jpg">
+           Beli Sekarang <i class="fas fa-cart-plus"></i>
+        </a>
+    </div>
+    <div class="gallery-item">
+      <img src="KAOSKU Indonesian Jersey Ver.3.jpg" alt="Jersey KAOSKU Indonesian Ver.3">
+      <h5>Jersey KAOSKU Indonesian Ver.3 <i class="fas fa-futbol"></i></h5>
+      <select class="price-selector">
+        <option value="165000">Rp 165.000 (1-9 PCS)</option>
+        <option value="135000">Rp 135.000 (10-99 PCS)</option>
+        <option value="125000">Rp 125.000 (100+ PCS)</option>
+    </select>
+    <p class="price selected-price">Rp 165.000,00,-</p>
+                    <a href="#" class="buy-btn addToCart" 
+         data-name="Jersey KAOSKU Indonesian Jersey Ver.3"
+         data-price="165000"
+         data-image="KAOSKU Indonesian Jersey Ver.3.jpg">
+         Beli Sekarang <i class="fas fa-cart-plus"></i>
+      </a>
+  </div>
+  <div class="gallery-item">
+    <img src="SPJ SETYOWATI GROUP Octopus-styled Black White Jersey.jpg" alt="SPJ Octopus-Styled Black White Jersey">
+    <h5>SPJ Octopus-Styled Black White Jersey <i class="fas fa-futbol"></i></h5>
+    <select class="price-selector">
+      <option value="165000">Rp 165.000 (1-9 PCS)</option>
+      <option value="135000">Rp 135.000 (10-99 PCS)</option>
+      <option value="125000">Rp 125.000 (100+ PCS)</option>
+  </select>
+  <p class="price selected-price">Rp 165.000,00,-</p>
+                  <a href="#" class="buy-btn addToCart" 
+       data-name="SPJ Octopus-Styled Black White Jersey"
+       data-price="165000"
+       data-image="SPJ SETYOWATI GROUP Octopus-styled Black White Jersey.jpg">
+       Beli Sekarang <i class="fas fa-cart-plus"></i>
+    </a>
+</div>
+<div class="gallery-item">
+  <img src="SPJ MAT-PRINT SABLON EXPRESS JERSEY.jpg" alt="Mat-Print Sablon Express Jersey">
+  <h5>SPJ Mat-Print Sablon Express Jersey <i class="fas fa-futbol"></i></h5>
+  <select class="price-selector">
+    <option value="165000">Rp 165.000 (1-9 PCS)</option>
+    <option value="135000">Rp 135.000 (10-99 PCS)</option>
+    <option value="125000">Rp 125.000 (100+ PCS)</option>
+</select>
+<p class="price selected-price">Rp 165.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+     data-name="SPJ Mat-Print Sablon Express Jersey"
+     data-price="165000"
+     data-image="SPJ MAT-PRINT SABLON EXPRESS JERSEY.jpg">
+     Beli Sekarang <i class="fas fa-cart-plus"></i>
+  </a>
+</div>
+<div class="gallery-item">
+  <img src="SPJ BLACK WITH CYAN AND YELLOW STRIPE JERSEY.jpg" alt="SPJ Black With Cyan And Yellow Stripe Jersey">
+  <h5>SPJ Black With Cyan And Yellow Stripe Jersey <i class="fas fa-futbol"></i></h5>
+  <select class="price-selector">
+    <option value="165000">Rp 165.000 (1-9 PCS)</option>
+    <option value="135000">Rp 135.000 (10-99 PCS)</option>
+    <option value="125000">Rp 125.000 (100+ PCS)</option>
+</select>
+<p class="price selected-price">Rp 165.000,00,-</p>
+                <a href="#" class="buy-btn addToCart" 
+     data-name="SPJ Black With Cyan And Yellow Stripe Jersey"
+     data-price="165000"
+     data-image="SPJ BLACK WITH CYAN AND YELLOW STRIPE JERSEY.jpg">
+     Beli Sekarang <i class="fas fa-cart-plus"></i>
+  </a>
+</div>
+        </div>
+
+        <a href="kaosku.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke KAOSKU</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll(".addToCart");
+    
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+    
+                    const name = this.getAttribute("data-name");
+                    const price = this.getAttribute("data-price");
+                    const image = this.getAttribute("data-image");
+    
+                    console.log("Produk Ditambahkan ke Keranjang:");
+                    console.log("Nama:", name);
+                    console.log("Harga:", price);
+                    console.log("Gambar:", image);
+    
+                    alert(`${name} telah ditambahkan ke keranjang!`);
+                });
+            });
+        });
+    </script>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cartButtons = document.querySelectorAll(".addToCart");
+
+        cartButtons.forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.preventDefault(); // Mencegah navigasi default
+                
+                const name = this.getAttribute("data-name");
+                const price = parseInt(this.getAttribute("data-price"));
+                const image = this.getAttribute("data-image");
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                
+                // Periksa apakah produk sudah ada di keranjang
+                let existingProduct = cart.find(item => item.name === name);
+
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+
+                // Simpan kembali ke localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert(name + " telah ditambahkan ke keranjang!");
+
+                // Redirect ke halaman keranjang
+                window.location.href = "keranjangkaosku.html";
+            });
+        });
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Update harga saat dropdown dipilih
+    const priceSelectors = document.querySelectorAll(".price-selector");
+
+    priceSelectors.forEach(selector => {
+        selector.addEventListener("change", function () {
+            const selectedPrice = this.value; // Ambil nilai harga dari dropdown
+            const parent = this.closest(".gallery-item"); // Cari elemen induk
+            const priceDisplay = parent.querySelector(".selected-price"); // Temukan elemen harga
+            const buyButton = parent.querySelector(".addToCart"); // Temukan tombol "Beli Sekarang"
+
+            // Update harga yang ditampilkan
+            priceDisplay.textContent = `Rp ${parseInt(selectedPrice).toLocaleString()},00,-`;
+
+            // Update atribut data-price pada tombol "Beli Sekarang"
+            buyButton.setAttribute("data-price", selectedPrice);
+        });
+    });
+
+    // Handle klik tombol "Beli Sekarang"
+    const addToCartButtons = document.querySelectorAll(".addToCart");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Mencegah navigasi default
+
+            const name = this.getAttribute("data-name");
+            const price = parseInt(this.getAttribute("data-price"));
+            const image = this.getAttribute("data-image");
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Periksa apakah produk sudah ada di keranjang
+            let existingProduct = cart.find(item => item.name === name);
+
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+
+            // Simpan kembali ke localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(`${name} telah ditambahkan ke keranjang!`);
+
+            // Redirect ke halaman keranjang
+            window.location.href = "keranjangkaosku.html";
+        });
+    });
+});
+</script>
+
+</center>
+</body>
+</html>
